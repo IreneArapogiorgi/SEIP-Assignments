@@ -4,7 +4,7 @@ This repository contains assignments delivered for Software Engineering in Pract
 ## Project Structure
 This repository's main folder seip2020_practical_assignments contains the following assignment:
 
-[Histogram Generator](gradeshistogram) - creates a histogram from a given file of student's grades
+[Histogram Generator](seip2020_practical_assignments/gradeshistogram) - creates a histogram from a given file of student's grades
 The first assignment consists of a parent Maven project named *seip2020_practical_assignments* and one sub-project (module) named *gradeshistogram*, which handles the dependencies in a different way.
 
 Execute the following command in the repository root directory in order to build all modules. 
