@@ -5,8 +5,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	 
-	<name>Maven Assignment</name>
-	<description>This project is about assignments related to Maven.</description>
+	<name>SEiP Practical Assignments</name>
+	<description>This project contains all assignments delivered for Software Engineering in Practice course.</description>
 	 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
