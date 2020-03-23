@@ -53,3 +53,7 @@ Note that the gradeshistogram-0.0.1-SNAPSHOT.jar is not executable.
 ## Authors
 
 * [Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
+
+## Acknowledgments
+
+* [Antonis Gkortzis](https://github.com/AntonisGkortzis) for the assignment template and instructions.
