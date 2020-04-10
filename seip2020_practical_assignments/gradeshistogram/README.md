@@ -56,7 +56,7 @@ mvn clean package
 This command generates a seperate jar file in module's corresponding target (```module/target```) directory.
 
 ## Authors
-* [Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
+[Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
 
 ## Acknowledgments
-* [Antonis Gkortzis](https://github.com/AntonisGkortzis) for the assignment template and instructions.
+[Antonis Gkortzis](https://github.com/AntonisGkortzis) for the assignment template and instructions.
