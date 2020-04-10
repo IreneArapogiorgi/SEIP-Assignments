@@ -27,9 +27,7 @@ This repository's main folder seip2020_practical_assignments contains the follow
 4. Setup Maven in Linux. Execute ```sudo apt update && sudo apt install maven``` in a terminal.
 
 ## Authors
-
-* [Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
+[Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
 
 ## Acknowledgments
-
-* [Antonis Gkortzis](https://github.com/AntonisGkortzis) for the assignment template and instructions.
+[Antonis Gkortzis](https://github.com/AntonisGkortzis) for the assignment template and instructions.
