@@ -49,7 +49,7 @@ java -jar gradeshistogram/target/gradeshistogram-0.0.1-SNAPSHOT-jar-with-depende
 Note that the gradeshistogram-0.0.1-SNAPSHOT.jar is not executable.
 
 ## Build
-Execute the following command in the repository root directory in order to build all modules.
+Execute the following command in the repository root directory in order to build the project.
 ```
 mvn clean package
 ```
