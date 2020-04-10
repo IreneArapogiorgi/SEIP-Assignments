@@ -1,4 +1,7 @@
 # SEIP-Assignments
+[![Build Status](https://travis-ci.com/IreneArapogiorgi/SEIP-Assignments.svg?token=DbTRNzdsiZ9EWLeNqxpq&branch=development)](https://travis-ci.com/IreneArapogiorgi/SEIP-Assignments)
+
+## Overview
 This repository contains assignments delivered for Software Engineering in Practice course. The course is part of the curriculum of the [Department of Management Science & Technology](https://www.dept.aueb.gr/en/dmst) from the Athens University of Economics and Business and the project is assigned by [Diomidis Spinellis](https://github.com/dspinellis) and [Antonis Gkortzis](https://github.com/AntonisGkortzis).
 
 ## Project Structure
