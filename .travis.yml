@@ -1,0 +1,19 @@
+language: java
+
+jdk:
+  - openjdk8
+
+branches:
+  only:
+  - master
+  - development
+
+before_script: 
+  - cd seip2020_practical_assignments # enter working directory
+  - ls -la # print the contents of the current working directory
+
+script: 
+  - mvn clean package
+
+after_success:
+  - echo "Process terminated successfully"
