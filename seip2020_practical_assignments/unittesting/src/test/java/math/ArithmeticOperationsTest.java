@@ -40,7 +40,34 @@ public class ArithmeticOperationsTest {
 	 */
     @Test
     public void testMultiplicationResult() {
-    	Assert.assertEquals(6.0, operation.multiply(2, 3), DELTA);
+    	Assert.assertEquals(6, operation.multiply(2, 3), DELTA);
+    }
+    
+    /*
+	 * A unit test that checks the multiplication operation
+	 * with input value x equal to zero.
+	 */
+    @Test
+    public void testMultiplicationResultWhenXZero() {
+    	Assert.assertEquals(0, operation.multiply(0, 3), DELTA);
+    }
+    
+    /*
+	 * A unit test that checks the multiplication operation
+	 * with input value y equal to zero.
+	 */
+    @Test
+    public void testMultiplicationResultWhenYZero() {
+    	Assert.assertEquals(0, operation.multiply(2, 0), DELTA);
+    }
+    
+    /*
+	 * A unit test that checks the multiplication operation
+	 * with both input values equal to zero.
+	 */
+    @Test
+    public void testMultiplicationResultWhenBothZero() {
+    	Assert.assertEquals(0, operation.multiply(0, 0), DELTA);
     }
     
     @Rule
@@ -48,7 +75,7 @@ public class ArithmeticOperationsTest {
     
     /*
 	 * A test case for the exception caused when
-	 * one or more input values are negative. Testing
+	 * both input values are negative. Testing
 	 * the exception is performed with a @Rule
 	 */
 	@Test 
@@ -59,6 +86,30 @@ public class ArithmeticOperationsTest {
 	}
 	
 	/*
+	 * A test case for the exception caused when
+	 * the input value y is negative. Testing
+	 * the exception is performed with a @Rule
+	 */
+	@Test 
+	public void testMultiplyShouldThrowExceptionOnNegativeInputY() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("x & y should be >= 0");
+		operation.multiply(2, -3);
+	}
+	
+	/*
+	 * A test case for the exception caused when
+	 * the input value x is negative. Testing
+	 * the exception is performed with a @Rule
+	 */
+	@Test 
+	public void testMultiplyShouldThrowExceptionOnNegativeInputX() {
+		thrown.expect(IllegalArgumentException.class);
+		thrown.expectMessage("x & y should be >= 0");
+		operation.multiply(-2, 3);
+	}
+	
+	/*
 	 * A test case for the exception caused when the
 	 * product does not fit in an Integer variable.
 	 * Testing the exception is performed with a @Rule
@@ -66,7 +117,7 @@ public class ArithmeticOperationsTest {
 	@Test
 	public void testMultiplyShouldThrowExceptionWhenProductDoesNotFit() {
 		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("The product does not fit in an Integer variable");
+		thrown.expectMessage("The product does not fit in an Integer variable.");
 		operation.multiply(Integer.MAX_VALUE, 2);
 	}
 }
