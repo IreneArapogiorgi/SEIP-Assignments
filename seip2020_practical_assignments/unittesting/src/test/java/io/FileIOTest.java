@@ -16,7 +16,7 @@ import org.junit.rules.ExpectedException;
 public class FileIOTest {
 	
 	FileIO fileio = new FileIO();
-	int[] expected = {2, 4, 6, 8, 10};
+	int[] expected = {2, 3, 4, 5, 6, 7, 8};
 	
 	/*
 	 * A unit test that checks correctness of readFile method
