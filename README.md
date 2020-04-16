@@ -22,7 +22,11 @@ This repository's main folder seip2020_practical_assignments contains the follow
 ## Build
 Execute the following command in the repository root directory in order to build the project.
 ```
-mvn clean install
+mvn clean install jacoco:report
+```
+This command will also generate a report of the code coverage produced by JaCoCo. The report will be located in the following path for each module:
+```
+target/site/jacoco
 ```
 
 ## Test
@@ -32,6 +36,12 @@ mvn test
 ```
 Note that only classes with a ```Test``` suffix located in the ```src/test``` will be executed and reported as tests.
 You can also run each test independently using Eclipse by right-clicking on the preferred test and choose Run as -> Junit Test.
+
+## Generate Test-Coverage Report
+To simply run the unit tests of the project, execute the following Maven command:
+```
+mvn test jacoco:report
+```
 
 ## Continuous Integration
 This projects utilizes [TravisCI](https://docs.travis-ci.com/user/tutorial/) services in other to test and build the application upon each ```git-push``` in the remote repository. There are multiple build environments in which the application will be tested and build. You can check these options under the ```jdk``` tag in the ```.travis.yml``` file.
@@ -44,10 +54,10 @@ After each build, the badge is updated with the corresponding build status, gree
 * Apache Maven 3.6.3
 
 ## How To
-1. [Install Eclipse](https://www.eclipse.org/downloads/)
-2. [Install Java](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
-3. [Setup Maven in Windows](https://mkyong.com/maven/how-to-install-maven-in-windows/)
-4. Setup Maven in Linux. Execute ```sudo apt update && sudo apt install maven``` in a terminal.
+* [Install Eclipse](https://www.eclipse.org/downloads/)
+* [Install Java](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
+* [Setup Maven in Windows](https://mkyong.com/maven/how-to-install-maven-in-windows/)
+* Setup Maven in Linux. Execute ```sudo apt update && sudo apt install maven``` in a terminal.
 
 ## Authors
 [Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
