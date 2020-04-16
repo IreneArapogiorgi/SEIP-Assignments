@@ -28,4 +28,32 @@ public class MyMath {
 		
         return result;
 	}
+	
+	/**
+	 * Checks if a given number n>=2 is a prime number.
+	 * @param n the number we check if is prime or not
+	 * @return True if n is a prime number, otherwise False
+	 * @exception IllegalArgumentException when n < 2 
+	 */
+	public boolean isPrime(int n) {
+		if (n < 2) throw new IllegalArgumentException("Parameter n cannot be smaller than 2.");
+		
+		int i = 2;
+		boolean nonprime = false;
+		
+        while(i <= n/2) {
+            // Condition for non-prime number
+            if(n % i == 0) {
+            	nonprime = true;
+                break;
+            }
+            ++i;
+        }
+
+        if (!nonprime) {
+            return true;
+        } else {
+            return false;
+        }
+	}
 }
