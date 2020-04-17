@@ -6,7 +6,7 @@ package math;
  * 
  * @author Irene Arapogiorgi
  * @version 1.0
- * @since   2020-04-10
+ * @since   2020-04-17
  */
 public class MyMath {
 	
@@ -37,23 +37,13 @@ public class MyMath {
 	 */
 	public boolean isPrime(int n) {
 		if (n < 2) throw new IllegalArgumentException("Parameter n cannot be smaller than 2.");
-		
-		int i = 2;
-		boolean nonprime = false;
-		
-        while(i <= n/2) {
-            // Condition for non-prime number
-            if(n % i == 0) {
-            	nonprime = true;
-                break;
-            }
-            ++i;
-        }
 
-        if (!nonprime) {
-            return true;
-        } else {
-            return false;
-        }
+		for (int i = 2; i <= n/2; i++) {
+			// Condition for non-prime number
+			if(n % i == 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
