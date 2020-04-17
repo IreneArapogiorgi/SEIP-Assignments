@@ -11,7 +11,7 @@ import org.junit.rules.ExpectedException;
  * 
  * @author Irene Arapogiorgi
  * @version 1.0
- * @since   2020-04-10
+ * @since   2020-04-17
  */
 public class MyMathTest {
 	
@@ -23,7 +23,7 @@ public class MyMathTest {
 	 */
     @Test
     public void testIsPrimeTrueOutput() {
-    	Assert.assertEquals(true, mm.isPrime(5));
+    	Assert.assertTrue(mm.isPrime(5));
     }
     
 	/*
@@ -32,7 +32,7 @@ public class MyMathTest {
 	 */
     @Test
     public void testIsPrimeFalseOutput() {
-    	Assert.assertEquals(false, mm.isPrime(4));
+    	Assert.assertFalse(mm.isPrime(4));
     }
 	
     @Rule
