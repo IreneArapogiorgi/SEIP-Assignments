@@ -6,7 +6,7 @@ package math;
  * 
  * @author Irene Arapogiorgi
  * @version 1.0
- * @since   2020-04-17
+ * @since   2020-04-19
  */
 public class MyMath {
 	
@@ -38,7 +38,7 @@ public class MyMath {
 	public boolean isPrime(int n) {
 		if (n < 2) throw new IllegalArgumentException("Parameter n cannot be smaller than 2.");
 
-		for (int i = 2; i <= n/2; i++) {
+		for (int i = 2; i <= Math.sqrt(n); i++) {
 			// Condition for non-prime number
 			if(n % i == 0) {
 				return false;
