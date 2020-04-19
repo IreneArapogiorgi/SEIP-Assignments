@@ -11,7 +11,7 @@ import org.junit.rules.ExpectedException;
  * 
  * @author Irene Arapogiorgi
  * @version 1.0
- * @since   2020-04-17
+ * @since   2020-04-19
  */
 public class MyMathTest {
 	
@@ -24,6 +24,16 @@ public class MyMathTest {
     @Test
     public void testIsPrimeTrueOutput() {
     	Assert.assertTrue(mm.isPrime(5));
+    }
+    
+	/*
+	 * A unit test that checks correctness of
+	 * isPrime method when input value n is the
+	 * largest possible prime integer number.
+	 */
+    @Test (timeout = 1000)
+    public void testIsPrimeTrueOutputWithLargeInput() {
+    	Assert.assertTrue(mm.isPrime(2147483647));
     }
     
 	/*
