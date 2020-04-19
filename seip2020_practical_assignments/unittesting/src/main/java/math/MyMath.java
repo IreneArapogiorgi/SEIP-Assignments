@@ -6,7 +6,7 @@ package math;
  * 
  * @author Irene Arapogiorgi
  * @version 1.0
- * @since   2020-04-10
+ * @since   2020-04-19
  */
 public class MyMath {
 	
@@ -27,5 +27,23 @@ public class MyMath {
         }
 		
         return result;
+	}
+	
+	/**
+	 * Checks if a given number n>=2 is a prime number.
+	 * @param n the number we check if is prime or not
+	 * @return True if n is a prime number, otherwise False
+	 * @exception IllegalArgumentException when n < 2 
+	 */
+	public boolean isPrime(int n) {
+		if (n < 2) throw new IllegalArgumentException("Parameter n cannot be smaller than 2.");
+
+		for (int i = 2; i <= Math.sqrt(n); i++) {
+			// Condition for non-prime number
+			if(n % i == 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
