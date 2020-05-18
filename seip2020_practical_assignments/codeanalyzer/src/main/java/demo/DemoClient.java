@@ -1,11 +1,16 @@
 package demo;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import codeanalyzer.*;
 
+/**
+ * Accepts arguments for analyzing
+ * the contents of a Java source code
+ * file and calculating related metrics
+ * 
+ * @author Irene Arapogiorgi
+ */
 public class DemoClient {
 
 	public static void main(String[] args) throws IOException {
@@ -25,19 +30,8 @@ public class DemoClient {
 			System.out.println("Incorrect number of arguments.");
 			System.exit(1);
 		}
-
-		SourceCodeAnalyzer analyzer = new SourceCodeAnalyzer(sourceFileLocation);
-		int loc = analyzer.calculateLOC(filepath, sourceCodeAnalyzerType);
-		int nom = analyzer.calculateNOM(filepath, sourceCodeAnalyzerType);
-		int noc = analyzer.calculateNOC(filepath, sourceCodeAnalyzerType);
 		
-		Map<String, Integer> metrics = new HashMap<>();
-		metrics.put("loc",loc);
-		metrics.put("nom",nom);
-		metrics.put("noc",noc);
-				
-		MetricsExporter exporter = new MetricsExporter();
-		exporter.writeFile(outputFileType, metrics, outputFilePath);
+		CodeAnalyzer analyzer = new CodeAnalyzer();
+		analyzer.analyze_code(filepath, sourceCodeAnalyzerType, sourceFileLocation, outputFilePath, outputFileType);
 	}
-
 }
