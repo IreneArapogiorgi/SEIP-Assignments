@@ -3,6 +3,18 @@ package codeanalyzer;
 import java.io.IOException;
 import java.util.Map;
 
+import inputreader.InputFileFactory;
+import inputreader.InputFileReader;
+import metricsmanager.AnalyzerType;
+import metricsmanager.LOCMetric;
+import metricsmanager.Metrics;
+import metricsmanager.MetricsFactory;
+import metricsmanager.MetricsManagement;
+import metricsmanager.NOCMetric;
+import metricsmanager.NOMMetric;
+import outputexporter.OutputFileExporter;
+import outputexporter.OutputFileFactory;
+
 /**
  * Analyzes the contents of a Java source code file,
  * calculates the following metrics: loc = lines of code,
