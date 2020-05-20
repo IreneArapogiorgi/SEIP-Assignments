@@ -12,13 +12,10 @@ import inputreader.InputFileReader;
  * @purpose This class is implemented using Bridge design pattern.
  * @author Irene Arapogiorgi
  */
-public class RegexAnalyzer implements AnalyzerType {
-	private InputFileReader fileReader;
-	private String filepath;
+public class RegexAnalyzer extends AnalyzerType {
 	
 	public RegexAnalyzer(InputFileReader _fileReader, String _filepath) {
-		this.fileReader = _fileReader;
-		this.filepath = _filepath;
+		super(_fileReader, _filepath);
 	}
 	
 	@Override
