@@ -27,7 +27,7 @@ public class LocalReaderTest {
 	@BeforeClass
 	public static void setUp() throws IOException {
 		expectedList = Files.readAllLines(new File(filepath).toPath(), Charset.defaultCharset());
-		expectedString = String.join("\n", expectedList) + "\n"; // transforms a list into a String (with 'new line' as delimiter) 
+		expectedString = String.join("\n", expectedList) + "\n"; // Transforms a list into a String (with 'new line' as delimiter) 
 	}
 
 	/*
@@ -35,7 +35,7 @@ public class LocalReaderTest {
 	 */
 	@Test
 	public void testReadFileIntoListLocal() throws IOException {
-		//read a locally stored file into a List
+		// Read a locally stored file into a List
 		List<String> actualList = lr.readFileIntoList(filepath);
 		
 		String[] expected = expectedList.stream().toArray(String[]::new);
@@ -49,7 +49,7 @@ public class LocalReaderTest {
 	 */
 	@Test
 	public void testReadFileIntoStringLocal() throws IOException {
-		//read a locally stored file into a String
+		// Read a locally stored file into a String
 		String actual = lr.readFileIntoString(filepath);
 				
 		assertEquals(expectedString, actual);

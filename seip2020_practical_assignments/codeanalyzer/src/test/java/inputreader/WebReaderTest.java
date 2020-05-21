@@ -36,7 +36,7 @@ public class WebReaderTest {
 	 */
 	@Test
 	public void testReadFileIntoListWeb() throws IOException {
-		//read a file stored in the web into a List
+		// Read a file stored in the web into a List
 		List<String> actualList = wr.readFileIntoList(webpath);
 		
 		String[] expected = expectedList.stream().toArray(String[]::new);
@@ -50,7 +50,7 @@ public class WebReaderTest {
 	 */
 	@Test
 	public void testReadFileIntoStringWeb() throws IOException {
-		//read a file stored in the web into a String
+		// Read a file stored in the web into a String
 		String actual = wr.readFileIntoString(webpath);
 				
 		assertEquals(expectedString, actual);

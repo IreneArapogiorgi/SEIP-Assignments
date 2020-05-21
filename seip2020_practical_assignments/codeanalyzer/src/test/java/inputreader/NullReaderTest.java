@@ -26,7 +26,7 @@ public class NullReaderTest {
 	 */
 	@Test
 	public void testReadFileIntoListWeb() throws IOException {
-		//read a file stored in the web into a List
+		// Read a file stored in the web into a List
 		List<String> actualList = nr.readFileIntoList(filepath);
 		
 		String[] expected = expectedList.stream().toArray(String[]::new);
@@ -40,7 +40,7 @@ public class NullReaderTest {
 	 */
 	@Test
 	public void testReadFileIntoStringWeb() throws IOException {
-		//read a file stored in the web into a String
+		// Read a file stored in the web into a String
 		String actual = nr.readFileIntoString(filepath);
 				
 		assertEquals(expectedString, actual);
