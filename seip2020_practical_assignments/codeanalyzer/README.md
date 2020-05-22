@@ -4,10 +4,10 @@ The third assignment evaluates the modification of a given code-base in order to
 The given code-base is a software system that reads a Java source code file that is stored locally or on the web, calculate the LOC, NOM and NOC metrics and finally exports these metrics to an output file.
 
 ## Code-Base's Class Diagram
-![Code-Base's Class Diagram](/uml/code_base.png)
+![Code-Base's Class Diagram](/codeanalyzer/uml/code_base.png)
 
 ## Modified System's Class Diagram
-![Modified System's Class Diagram](/uml/modified_system.png)
+![Modified System's Class Diagram](/codeanalyzer/uml/modified_system.png)
 
 ## Getting Started
 1. Fork this repository to your GitHub account.
