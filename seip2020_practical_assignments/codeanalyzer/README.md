@@ -60,11 +60,17 @@ The produced jar is located in the target directory and can be executed as follo
 java -jar codeanalyzer/target/codeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar arg0 arg1 arg2 arg3 arg4
 ```
 ```arg0 = "JavaSourceCodeInputFile"``` e.g. src/test/resources/TestClass.java
+
 ```arg1 = "SourceCodeAnalyzerType``` [regex|strcomp]
+
 ```arg2 = "SourceCodeLocationType"``` [local|web]
+
 ```arg3 = "OutputFilePath"``` e.g. ../output_metrics_file
+
 ```arg4 = "OutputFileType"``` [csv|json]
+
 For example, when inside codeanalyzer folder, run ```java –jar ./target/codeanalyzer-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./src/test/resources/TestClass.java regex local metrics_results csv```
+
 Note that the codeanalyzer-0.0.1-SNAPSHOT.jar is not executable.
 
 ## Build
