@@ -22,6 +22,7 @@ Facade design pattern serves as a front-facing interface masking more complex un
 
 #### Classes
 [Client](./src/main/java/client/Client.java) - uses Facade to access the functionality of the main system
+
 [CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - analyzes the contents of a Java source code file, calculates the metrics and exports a file containing them
 
 ## Getting Started
