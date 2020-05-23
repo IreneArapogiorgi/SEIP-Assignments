@@ -140,9 +140,9 @@ Factory design pattern serves as a common interface to refer to all objects of t
 
 InputFileFactory creates objects of classes [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java) with [InputFileReader](./src/main/java/inputreader/InputFileReader.java) being their interface.
 
-[MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java) - calculates metrics based on source code analyzer type
+[AnalyzerFactory](./src/main/java/metricsmanager/AnalyzerFactory.java) - calculates metrics based on source code analyzer type
 
-MetricsFactory creates objects of classes [RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) with [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) being their interface.
+AnalyzerFactory creates objects of classes [RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) with [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) being their interface.
 
 [OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java) - chooses export type for output file
 
