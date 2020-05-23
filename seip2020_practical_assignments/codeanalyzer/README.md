@@ -162,6 +162,8 @@ Strategy design pattern defines a family of algorithms/functionalities, encapsul
 
 Family of [InputFileReader](./src/main/java/inputreader/InputFileReader.java) interface (classes read input file based on its location type): [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java).
 
+Family of [Metrics](./src/main/java/metricsmanager/Metrics.java) abstract class (classes correspond to different metrics): [LOCMetric](./src/main/java/metricsmanager/LOCMetric.java), [NOMMetric](./src/main/java/metricsmanager/NOMMetric.java) and [NOCMetric](./src/main/java/metricsmanager/NOCMetric.java).
+
 Family of [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) abstract class (classes analyze metrics based on analyzer type): [RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java).
 
 Family of [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) interface (classes export output file based on file type): [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java).
