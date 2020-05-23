@@ -37,9 +37,15 @@ Factory design pattern serves as a common interface to refer to all objects of t
 
 [InputFileFactory](./src/main/java/inputreader/InputFileFactory.java) - retrieves content of input file based on its location type
 
+InputFileFactory creates objects of classes [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java) with [InputFileReader](./src/main/java/inputreader/InputFileReader.java) being their interface class.
+
 [MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java) - calculates metrics based on source code analyzer type
 
+MetricsFactory creates objects of classes [RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) with [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) being their interface class.
+
 [OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java) - chooses export type for output file
+
+OutputFileFactory creates objects of classes [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java) with [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) being their interface class.
 
 ## Getting Started
 1. Fork this repository to your GitHub account.
