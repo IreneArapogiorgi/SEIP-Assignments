@@ -177,7 +177,7 @@ Null Object design pattern simplifies the use of dependencies that can be undefi
 #### Classes
 [NullReader](./src/main/java/inputreader/NullReader.java) - manages null output if source file's type is neither of the known types (local, web)
 
-[InputFileReader](./src/main/java/inputreader/InputFileReader.java) - interface of NullReader
+[InputFileReader](./src/main/java/inputreader/InputFileReader.java) - interface of NullReader class
 
 ## Authors
 [Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
