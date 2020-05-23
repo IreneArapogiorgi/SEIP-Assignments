@@ -103,7 +103,14 @@ The report will be located in the following path: ```target/site/jacoco```
 
 ## Design Patterns
 
-### Facade
+### <a name="menu"></a>Design Patterns Menu
+* [Facade](#facade)
+* [Factory](#factory)
+* [Strategy](#strategy)
+* [Bridge](#bridge)
+* [Null](#null)
+
+### <a name="facade"></a>Facade
 Facade design pattern serves as a front-facing interface masking more complex underlying or structural code. In this case, it provides Client with simplified access to the actual functionality of the system.
 
 #### Benefits
@@ -119,7 +126,7 @@ Facade design pattern serves as a front-facing interface masking more complex un
 
 CodeAnalyzer interacts directly with classes [InputFileFactory](./src/main/java/inputreader/InputFileFactory.java), [MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java), [MetricsManagement](./src/main/java/metricsmanager/MetricsManagement.java) and [OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java).
 
-### Factory
+### <a name="factory"></a>Factory
 Factory design pattern serves as a common interface to refer to all objects of the same kind. Objects are created without exposing the instantiation logic to the class calling the Factory.
 
 #### Benefits
@@ -141,7 +148,7 @@ MetricsFactory creates objects of classes [RegexAnalyzer](./src/main/java/metric
 
 OutputFileFactory creates objects of classes [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java) with [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) being their interface.
 
-### Strategy
+### <a name="strategy"></a>Strategy
 Strategy design pattern defines a family of algorithms/functionalities, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from the class using it.
 
 #### Benefits
