@@ -25,6 +25,19 @@ Facade design pattern serves as a front-facing interface masking more complex un
 
 [CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - analyzes the contents of a Java source code file, calculates the metrics and exports a file containing them
 
+### Factory
+Factory design pattern serves as a common interface to refer to all objects of the same kind. Objects are created without exposing the instantiation logic to the class calling the Factory.
+
+#### Benefits
+* Separates the logic to instantiate classes
+* Supports extending each hierarchy without affecting the classes calling the Factory
+
+#### Classes
+[CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - calls each Factory in order to read and analyze the given code file as well as to extract its metrics
+[InputFileFactory](./src/main/java/inputreader/InputFileFactory.java) - retrieves content of input file based on its location type
+[MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java) - calculates metrics based on source code analyzer type
+[OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java) - chooses export type for output file
+
 ## Getting Started
 1. Fork this repository to your GitHub account.
 2. Clone the forked repository to your local machine using ```git clone link-of-forked-repository```.
