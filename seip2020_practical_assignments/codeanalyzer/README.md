@@ -9,6 +9,21 @@ The given code-base is a software system that reads a Java source code file that
 ## Modified System's Class Diagram
 ![Modified System's Class Diagram](./uml/modified_system.png)
 
+## Design Patterns
+
+### Facade
+Facade design pattern serves as a front-facing interface masking more complex underlying or structural code. In this case, it provides Client with simplified access to the actual functionality of the system.
+
+#### Benefits
+* Provides a simple interface to a complex system
+* Promotes subsystem independence and portability
+* Defines an entry point to each subsystem level
+* Dependences between subsystems are simplified by making them communicate with each other solely through the facade.
+
+#### Classes
+[Client](./src/main/java/client/Client.java) - uses Facade to access the functionality of the main system
+[CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - analyzes the contents of a Java source code file, calculates the metrics and exports a file containing them
+
 ## Getting Started
 1. Fork this repository to your GitHub account.
 2. Clone the forked repository to your local machine using ```git clone link-of-forked-repository```.
