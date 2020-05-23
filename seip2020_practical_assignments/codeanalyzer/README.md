@@ -49,6 +49,22 @@ MetricsFactory creates objects of classes [RegexAnalyzer](./src/main/java/metric
 
 OutputFileFactory creates objects of classes [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java) with [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) being their interface.
 
+### Strategy
+Strategy design pattern defines a family of algorithms/functionalities, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from the class using it.
+
+#### Benefits
+* Reduces overall complexity as it separates possible functionalities from Client and Factories
+* Supports possible changes or integrations of functionalities with the least possible code modification
+
+#### Trade-offs
+* Factories are coupled to input reader, metrics manager and output exporter implementation.
+
+#### Classes
+
+Family of [InputFileReader](./src/main/java/inputreader/InputFileReader.java) interface (classes read input file based on its location type): [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java).
+
+Family of [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) interface (classes export output file based on file type): [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java).
+
 ## Getting Started
 1. Fork this repository to your GitHub account.
 2. Clone the forked repository to your local machine using ```git clone link-of-forked-repository```.
