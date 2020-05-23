@@ -34,8 +34,11 @@ Factory design pattern serves as a common interface to refer to all objects of t
 
 #### Classes
 [CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - calls each Factory in order to read and analyze the given code file as well as to extract its metrics
+
 [InputFileFactory](./src/main/java/inputreader/InputFileFactory.java) - retrieves content of input file based on its location type
+
 [MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java) - calculates metrics based on source code analyzer type
+
 [OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java) - chooses export type for output file
 
 ## Getting Started
