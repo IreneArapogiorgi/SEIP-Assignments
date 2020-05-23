@@ -108,7 +108,7 @@ The report will be located in the following path: ```target/site/jacoco```
 * [Factory](#factory)
 * [Strategy](#strategy)
 * [Bridge](#bridge)
-* [Null](#null)
+* [Null Object](#null)
 
 ### <a name="facade"></a>Facade
 Facade design pattern serves as a front-facing interface masking more complex underlying or structural code. In this case, it provides Client with simplified access to the actual functionality of the system.
@@ -163,6 +163,21 @@ Strategy design pattern defines a family of algorithms/functionalities, encapsul
 Family of [InputFileReader](./src/main/java/inputreader/InputFileReader.java) interface (classes read input file based on its location type): [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java).
 
 Family of [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) interface (classes export output file based on file type): [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java).
+
+### <a name="null"></a>Null Object
+Null Object design pattern simplifies the use of dependencies that can be undefined by using instances of a concrete class that implements a known interface instead of null references.
+
+#### Benefits
+* Removes the responsibility of classes handling null cases
+* Simplifies code as it avoids having to write testing code which handles the null collaborator specially
+
+#### Trade-offs
+* It might cause more harm than good by hiding errors and complicating testing
+
+#### Classes
+[NullReader](./src/main/java/inputreader/NullReader.java) - manages null output if source file's type is neither of the known types (local, web)
+
+[InputFileReader](./src/main/java/inputreader/InputFileReader.java) - interface of NullReader
 
 ## Authors
 [Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
