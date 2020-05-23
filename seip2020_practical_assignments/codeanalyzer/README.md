@@ -30,7 +30,7 @@ Factory design pattern serves as a common interface to refer to all objects of t
 
 #### Benefits
 * Separates the logic to instantiate classes
-* Supports extending each hierarchy without affecting the classes calling the Factory
+* Supports extending each hierarchy without affecting the class calling each Factory
 
 #### Classes
 [CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - calls each Factory in order to read and analyze the given code file as well as to extract its metrics
