@@ -168,6 +168,28 @@ Family of [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) abstr
 
 Family of [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) interface (classes export output file based on file type): [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java).
 
+### <a name="bridge"></a>Bridge
+Bridge design pattern decouples an abstraction from its implementation so that the two can vary independently. It is useful when both the class and what it does vary often. The class itself can be thought of as the abstraction and what the class can do as the implementation. The bridge pattern can also be thought of as two layers of abstraction.
+
+#### Benefits
+* Dimensions Metrics and Analyzers can vary independently
+* Adding new types of Analyzers does not affect the Metrics hierarchy
+* Adding new Metrics require minimal changes in the Analyzers hierarchy (just the addition of corresponding methods)
+* Analyzing by type functionality moved to a more appropriate class
+
+#### Classes
+[MetricsManagement](./src/main/java/metricsmanager/MetricsManagement.java) - manages Metrics objects in order to calculate input file's metrics
+
+[Metrics](./src/main/java/metricsmanager/Metrics.java) - abstract class
+
+[LOCMetric](./src/main/java/metricsmanager/LOCMetric.java), [NOMMetric](./src/main/java/metricsmanager/NOMMetric.java) and [NOCMetric](./src/main/java/metricsmanager/NOCMetric.java) - different types of metrics (refined abstraction)
+
+[AnalyzerFactory](./src/main/java/metricsmanager/AnalyzerFactory.java) - calculates metrics based on source code analyzer type
+
+[AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) - abstract class
+
+[RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) - different types of abalyzer types (refined abstraction)
+
 ### <a name="null"></a>Null Object
 Null Object design pattern simplifies the use of dependencies that can be undefined by using instances of a concrete class that implements a known interface instead of null references.
 
