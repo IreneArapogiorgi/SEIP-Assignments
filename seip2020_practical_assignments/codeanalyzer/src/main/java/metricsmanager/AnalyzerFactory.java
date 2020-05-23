@@ -12,7 +12,7 @@ import inputreader.InputFileReader;
  * @purpose This class is implemented using Factory design pattern.
  * @author Irene Arapogiorgi
  */
-public class MetricsFactory {
+public class AnalyzerFactory {
 	public AnalyzerType analyze_by_type(String type, InputFileReader file_reader, String filepath) {
 		if (type.equals("regex")) {
 			return new RegexAnalyzer(file_reader, filepath);
