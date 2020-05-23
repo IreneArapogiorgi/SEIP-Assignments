@@ -3,68 +3,6 @@ The third assignment evaluates the modification of a given code-base in order to
 
 The given code-base is a software system that reads a Java source code file that is stored locally or on the web, calculate the LOC, NOM and NOC metrics and finally exports these metrics to an output file.
 
-## Code-Base's Class Diagram
-![Code-Base's Class Diagram](./uml/code_base.png)
-
-## Modified System's Class Diagram
-![Modified System's Class Diagram](./uml/modified_system.png)
-
-## Design Patterns
-
-### Facade
-Facade design pattern serves as a front-facing interface masking more complex underlying or structural code. In this case, it provides Client with simplified access to the actual functionality of the system.
-
-#### Benefits
-* Provides a simple interface to a complex system
-* Promotes subsystem independence and portability
-* Defines an entry point to each subsystem level
-* Dependences between subsystems are simplified by making them communicate with each other solely through the facade.
-
-#### Classes
-[Client](./src/main/java/client/Client.java) - uses Facade to access the functionality of the main system
-
-[CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - analyzes the contents of a Java source code file, calculates the metrics and exports a file containing them
-
-CodeAnalyzer interacts directly with classes [InputFileFactory](./src/main/java/inputreader/InputFileFactory.java), [MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java), [MetricsManagement](./src/main/java/metricsmanager/MetricsManagement.java) and [OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java).
-
-### Factory
-Factory design pattern serves as a common interface to refer to all objects of the same kind. Objects are created without exposing the instantiation logic to the class calling the Factory.
-
-#### Benefits
-* Separates the logic to instantiate classes
-* Supports extending each hierarchy without affecting the class calling each Factory
-
-#### Classes
-[CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - calls each Factory in order to read and analyze the given code file as well as to extract its metrics
-
-[InputFileFactory](./src/main/java/inputreader/InputFileFactory.java) - retrieves content of input file based on its location type
-
-InputFileFactory creates objects of classes [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java) with [InputFileReader](./src/main/java/inputreader/InputFileReader.java) being their interface.
-
-[MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java) - calculates metrics based on source code analyzer type
-
-MetricsFactory creates objects of classes [RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) with [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) being their interface.
-
-[OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java) - chooses export type for output file
-
-OutputFileFactory creates objects of classes [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java) with [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) being their interface.
-
-### Strategy
-Strategy design pattern defines a family of algorithms/functionalities, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from the class using it.
-
-#### Benefits
-* Reduces overall complexity as it separates possible functionalities from Client and Factories
-* Supports possible changes or integrations of functionalities with the least possible code modification
-
-#### Trade-offs
-* Factories are coupled to input reader, metrics manager and output exporter implementation.
-
-#### Classes
-
-Family of [InputFileReader](./src/main/java/inputreader/InputFileReader.java) interface (classes read input file based on its location type): [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java).
-
-Family of [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) interface (classes export output file based on file type): [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java).
-
 ## Getting Started
 1. Fork this repository to your GitHub account.
 2. Clone the forked repository to your local machine using ```git clone link-of-forked-repository```.
@@ -156,6 +94,68 @@ To run the unit tests of the project and generate a report of the code coverage 
 mvn test jacoco:report
 ```
 The report will be located in the following path: ```target/site/jacoco```
+
+## Code-Base's Class Diagram
+![Code-Base's Class Diagram](./uml/code_base.png)
+
+## Modified System's Class Diagram
+![Modified System's Class Diagram](./uml/modified_system.png)
+
+## Design Patterns
+
+### Facade
+Facade design pattern serves as a front-facing interface masking more complex underlying or structural code. In this case, it provides Client with simplified access to the actual functionality of the system.
+
+#### Benefits
+* Provides a simple interface to a complex system
+* Promotes subsystem independence and portability
+* Defines an entry point to each subsystem level
+* Dependences between subsystems are simplified by making them communicate with each other solely through the facade.
+
+#### Classes
+[Client](./src/main/java/client/Client.java) - uses Facade to access the functionality of the main system
+
+[CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - analyzes the contents of a Java source code file, calculates the metrics and exports a file containing them
+
+CodeAnalyzer interacts directly with classes [InputFileFactory](./src/main/java/inputreader/InputFileFactory.java), [MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java), [MetricsManagement](./src/main/java/metricsmanager/MetricsManagement.java) and [OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java).
+
+### Factory
+Factory design pattern serves as a common interface to refer to all objects of the same kind. Objects are created without exposing the instantiation logic to the class calling the Factory.
+
+#### Benefits
+* Separates the logic to instantiate classes
+* Supports extending each hierarchy without affecting the class calling each Factory
+
+#### Classes
+[CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - calls each Factory in order to read and analyze the given code file as well as to extract its metrics
+
+[InputFileFactory](./src/main/java/inputreader/InputFileFactory.java) - retrieves content of input file based on its location type
+
+InputFileFactory creates objects of classes [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java) with [InputFileReader](./src/main/java/inputreader/InputFileReader.java) being their interface.
+
+[MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java) - calculates metrics based on source code analyzer type
+
+MetricsFactory creates objects of classes [RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) with [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) being their interface.
+
+[OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java) - chooses export type for output file
+
+OutputFileFactory creates objects of classes [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java) with [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) being their interface.
+
+### Strategy
+Strategy design pattern defines a family of algorithms/functionalities, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from the class using it.
+
+#### Benefits
+* Reduces overall complexity as it separates possible functionalities from Client and Factories
+* Supports possible changes or integrations of functionalities with the least possible code modification
+
+#### Trade-offs
+* Factories are coupled to input reader, metrics manager and output exporter implementation
+
+#### Classes
+
+Family of [InputFileReader](./src/main/java/inputreader/InputFileReader.java) interface (classes read input file based on its location type): [LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java).
+
+Family of [OutputFileExporter](./src/main/java/outputexporter/OutputFileExporter.java) interface (classes export output file based on file type): [CsvExporter](./src/main/java/outputexporter/CsvExporter.java) and [JsonExporter](./src/main/java/outputexporter/JsonExporter.java).
 
 ## Authors
 [Irene Arapogiorgi](https://gr.linkedin.com/in/irene-arapogiorgi)
