@@ -8,7 +8,7 @@ import inputreader.InputFileReader;
 import metricsmanager.AnalyzerType;
 import metricsmanager.LOCMetric;
 import metricsmanager.Metrics;
-import metricsmanager.MetricsFactory;
+import metricsmanager.AnalyzerFactory;
 import metricsmanager.MetricsManagement;
 import metricsmanager.NOCMetric;
 import metricsmanager.NOMMetric;
@@ -32,8 +32,8 @@ public class CodeAnalyzer {
 		InputFileReader file_reader = if_factory.read_by_type(sourceFileLocation);
 		
 		// Calculate metrics
-		MetricsFactory m_factory = new MetricsFactory();
-		AnalyzerType type = m_factory.analyze_by_type(sourceCodeAnalyzerType, file_reader, filepath);
+		AnalyzerFactory a_factory = new AnalyzerFactory();
+		AnalyzerType type = a_factory.analyze_by_type(sourceCodeAnalyzerType, file_reader, filepath);
 		
 		MetricsManagement m_mngt = new MetricsManagement();
 		Metrics loc = new LOCMetric(type);
