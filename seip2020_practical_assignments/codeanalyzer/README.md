@@ -25,6 +25,8 @@ Facade design pattern serves as a front-facing interface masking more complex un
 
 [CodeAnalyzer](./src/main/java/codeanalyzer/CodeAnalyzer.java) - analyzes the contents of a Java source code file, calculates the metrics and exports a file containing them
 
+CodeAnalyzer interacts directly with classes [InputFileFactory](./src/main/java/inputreader/InputFileFactory.java), [MetricsFactory](./src/main/java/metricsmanager/MetricsFactory.java), [MetricsManagement](./src/main/java/metricsmanager/MetricsManagement.java) and [OutputFileFactory](./src/main/java/outputexporter/OutputFileFactory.java).
+
 ### Factory
 Factory design pattern serves as a common interface to refer to all objects of the same kind. Objects are created without exposing the instantiation logic to the class calling the Factory.
 
