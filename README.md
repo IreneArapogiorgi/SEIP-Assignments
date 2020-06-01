@@ -12,6 +12,8 @@ This repository's main folder seip2020_practical_assignments contains the follow
 
 [Unit Testing](seip2020_practical_assignments/unittesting) - runs multiple unit tests on math related classes.
 
+[Code Analyzer](seip2020_practical_assignments/codeanalyzer) - extracts metrics of a given Java file.
+
 ## Getting Started
 1. Fork this repository to your GitHub account.
 2. Clone the forked repository to your local machine using ```git clone link-of-forked-repository```.
