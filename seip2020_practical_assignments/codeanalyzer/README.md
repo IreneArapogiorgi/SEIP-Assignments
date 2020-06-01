@@ -119,6 +119,9 @@ Facade design pattern serves as a front-facing interface masking more complex un
 * Defines an entry point to each subsystem level
 * Dependences between subsystems are simplified by making them communicate with each other solely through the facade.
 
+#### Trade-offs
+* There is high complexity and difficulty to test Facade as a pattern
+
 #### Classes
 [Client](./src/main/java/client/Client.java) - uses Facade to access the functionality of the main system
 
