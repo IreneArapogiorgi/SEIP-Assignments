@@ -181,7 +181,7 @@ Bridge design pattern decouples an abstraction from its implementation so that t
 * Analyzing by type functionality moved to a more appropriate class
 
 #### Classes
-First Bridge implementation between **Metrics** and **Analyzers**:
+**First** Bridge implementation between **Metrics** and **Analyzers**:
 
 [MetricsManagement](./src/main/java/metricsmanager/MetricsManagement.java) - manages Metrics objects in order to calculate input file's metrics
 
@@ -195,7 +195,7 @@ First Bridge implementation between **Metrics** and **Analyzers**:
 
 [RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) - different types of analyzer types (refined abstraction)
 
-Second Bridge implementation between **Input File Readers** and **Analyzers**:
+**Second** Bridge implementation between **Input File Readers** and **Analyzers**:
 
 [InputFileFactory](./src/main/java/inputreader/InputFileFactory.java) - retrieves content of input file based on its location type
 
