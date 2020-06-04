@@ -181,6 +181,8 @@ Bridge design pattern decouples an abstraction from its implementation so that t
 * Analyzing by type functionality moved to a more appropriate class
 
 #### Classes
+First Bridge implementation between **Metrics** and **Analyzers**:
+
 [MetricsManagement](./src/main/java/metricsmanager/MetricsManagement.java) - manages Metrics objects in order to calculate input file's metrics
 
 [Metrics](./src/main/java/metricsmanager/Metrics.java) - abstract class
@@ -191,7 +193,21 @@ Bridge design pattern decouples an abstraction from its implementation so that t
 
 [AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) - abstract class
 
-[RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) - different types of abalyzer types (refined abstraction)
+[RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) - different types of analyzer types (refined abstraction)
+
+Second Bridge implementation between **Input File Readers** and **Analyzers**:
+
+[InputFileFactory](./src/main/java/inputreader/InputFileFactory.java) - retrieves content of input file based on its location type
+
+[InputFileReader](./src/main/java/inputreader/InputFileReader.java) - interface class
+
+[LocalReader](./src/main/java/inputreader/LocalReader.java), [WebReader](./src/main/java/inputreader/WebReader.java) and [NullReader](./src/main/java/inputreader/NullReader.java) - different types of file locations
+
+[AnalyzerFactory](./src/main/java/metricsmanager/AnalyzerFactory.java) - calculates metrics based on source code analyzer type
+
+[AnalyzerType](./src/main/java/metricsmanager/AnalyzerType.java) - abstract class
+
+[RegexAnalyzer](./src/main/java/metricsmanager/RegexAnalyzer.java) and [StrcompAnalyzer](./src/main/java/metricsmanager/StrcompAnalyzer.java) - different types of analyzer types (refined abstraction)
 
 ### <a name="null"></a>Null Object
 Null Object design pattern simplifies the use of dependencies that can be undefined by using instances of a concrete class that implements a known interface instead of null references.
